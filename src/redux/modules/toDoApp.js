@@ -4,7 +4,7 @@ const LIST_ITEM_CLICK = "demo-react-redux/toDoApp/LIST_ITEM_CLICK"
 const DELETE_LIST_ITEM = "demo-react-redux/toDoApp/DELETE_LIST_ITEM"
 
 export function inputChange(value){
-	//console.log(value)
+	value = value._targetInst._hostNode.value
 	return {
 		type: INPUT_CHANGED,
 		value

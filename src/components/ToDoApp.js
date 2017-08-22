@@ -4,11 +4,10 @@ import List from "./List"
 import Input from "./Input"
 
 class ToDoApp extends React.Component {
-	
-	
+
 	render() {
 		let that = this
-		console.log(that.props)
+		// console.log(this.props)
 		return(
 
 			<div className="row">

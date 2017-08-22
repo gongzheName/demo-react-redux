@@ -6,6 +6,7 @@ const List = (props) => {
 		<li
 			style={{height:"35px"}}
 			key={i}
+			name={JSON.stringify(el)}
 		>
 			<span
 				style={
