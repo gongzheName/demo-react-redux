@@ -11,7 +11,6 @@ const initialState = {
 	newToDo: ""
 }
 
-
 export default function reducer(state=initialState, action){
 	switch (action.type){
 		case INPUT_CHANGED:

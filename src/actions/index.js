@@ -23,8 +23,7 @@ export function inputChange(value){
  * 新增待办事项
  */
 export function addItem(){
-	axios.get("http://localhost:8086/save/saveToDo")
-	.then((res) => {
+	axios.get("http://localhost:8086/save/saveToDo").then(res => {
 		console.log(res)
 	})
 	return {
