@@ -1,38 +1,10 @@
-const INPUT_CHANGED = "demo-react-redux/toDoApp/INPUT_CHANGED"
-const ADD_ITEM = "demo-react-redux/toDoApp/ADD_ITEM"
-const LIST_ITEM_CLICK = "demo-react-redux/toDoApp/LIST_ITEM_CLICK"
-const DELETE_LIST_ITEM = "demo-react-redux/toDoApp/DELETE_LIST_ITEM"
 
-import axios from "axios"
-
-export function inputChange(value){
-	value = value._targetInst._hostNode.value
-	return {
-		type: INPUT_CHANGED,
-		value
-	}
-}
-export function addItem(){
-	axios.get("http://localhost:8086/save/saveToDo")
-	.then((res) => {
-		console.log(res)
-	})
-	return {
-		type: ADD_ITEM
-	}
-}
-export function listItemClick(index){
-	return {
-		type: LIST_ITEM_CLICK,
-		index
-	}
-}
-export function deleteListItem(index){
-	return {
-		type: DELETE_LIST_ITEM,
-		index
-	}
-}
+import {
+	INPUT_CHANGED,
+	ADD_ITEM,
+	LIST_ITEM_CLICK,
+	DELETE_LIST_ITEM
+} from "../../actions/constants"
 
 const initialState = {
 	list: [{item: "test", done: false}],

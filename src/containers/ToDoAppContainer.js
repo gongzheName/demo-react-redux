@@ -10,7 +10,7 @@ import {
 	addItem,
 	listItemClick,
 	deleteListItem
-} from "../redux/modules/toDoApp"
+} from "../actions/index"
 
 function mapStateToProps(state){
 	return {
