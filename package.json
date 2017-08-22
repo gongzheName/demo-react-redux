@@ -10,6 +10,7 @@
   "author": "gonng",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.25.0",
     "react": "^15.6.1",

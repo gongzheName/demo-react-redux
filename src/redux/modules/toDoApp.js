@@ -3,6 +3,8 @@ const ADD_ITEM = "demo-react-redux/toDoApp/ADD_ITEM"
 const LIST_ITEM_CLICK = "demo-react-redux/toDoApp/LIST_ITEM_CLICK"
 const DELETE_LIST_ITEM = "demo-react-redux/toDoApp/DELETE_LIST_ITEM"
 
+import axios from "axios"
+
 export function inputChange(value){
 	value = value._targetInst._hostNode.value
 	return {
@@ -11,6 +13,10 @@ export function inputChange(value){
 	}
 }
 export function addItem(){
+	axios.get("http://localhost:8086/save/saveToDo")
+	.then((res) => {
+		console.log(res)
+	})
 	return {
 		type: ADD_ITEM
 	}
