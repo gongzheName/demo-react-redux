@@ -4,8 +4,9 @@
   "description": "blog_react_demo_1st_attempt",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --colors --content-base ./build",
-    "build": "webpack --progress --colors"
+    "start": "webpack-dev-server --hot --inline --colors --content-base ./build --prot 8888",
+    "build": "webpack --progress --colors",
+    "dev": "concurrently \"npm run start\" \"node server/save/saveToDo.js\""
   },
   "author": "gonng",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "babel-runtime": "^6.25.0",
+    "concurrently": "^3.5.0",
     "mysql": "^2.14.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
