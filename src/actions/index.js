@@ -22,12 +22,16 @@ export function inputChange(value){
 /*
  * 新增待办事项
  */
-export function addItem(){
+export function addItem(e){
+	var resD = {}
 	axios.get("http://localhost:8086/save/saveToDo").then(res => {
 		console.log(res)
+		resD.data = res.data
 	})
+	e.preventDefault()
 	return {
-		type: ADD_ITEM
+		type: ADD_ITEM,
+		test: resD.data
 	}
 }
 

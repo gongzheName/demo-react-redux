@@ -2,12 +2,13 @@ import React from "react"
 
 import List from "./List"
 import Input from "./Input"
+import Pt from "./Pt"
 
 class ToDoApp extends React.Component {
 
 	render() {
 		let that = this
-		// console.log(this.props)
+		//console.log(this)
 		return(
 
 			<div className="row">
@@ -28,6 +29,8 @@ class ToDoApp extends React.Component {
 								listItems={this.props.toDoApp.list}
 							/>
 
+							/*<Pt children={null} />*/
+							<Pt />
 						</div>
 					</div>
 				</div>

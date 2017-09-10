@@ -13,6 +13,7 @@ import {
 } from "../actions/index"
 
 function mapStateToProps(state){
+	//console.log(state)
 	return {
 		toDoApp: state.toDoApp
 	}
@@ -21,7 +22,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
 	return {
 		inputChange: (value) => dispatch(inputChange(value)),
-		addItem: () => dispatch(addItem()),
+		addItem: (e) => dispatch(addItem(e)),
 		listItemClick: (index) => dispatch(listItemClick(index)),
 		deleteListItem: (index) => dispatch(deleteListItem(index))
 	}

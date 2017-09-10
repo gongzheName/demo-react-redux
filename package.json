@@ -4,7 +4,7 @@
   "description": "blog_react_demo_1st_attempt",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --colors --port 8888",
+    "start": "webpack-dev-server --hot --inline --colors --open --port 8888",
     "build": "webpack --progress --colors",
     "dev": "concurrently \"npm run start\" \"node server/save/saveToDo.js\""
   },

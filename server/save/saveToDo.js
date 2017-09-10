@@ -22,18 +22,22 @@ app.get("/save/saveToDo", (req, res) => {
 	let arrInfo = []
 
 	/* 建数据库 */
-	conn.query(
+	/*conn.query(
 		"create database if not exists `dbtest2` default charset utf8;",
 		function(err, results, fields){
 			if(err){
 				res.status = 500
-				console.error(err)
+				console.log(err)
+				res.send(JSON.stringify({status:500}))
 			}else if(results){
 				res.send(JSON.stringify({data:"database success"}))
+			}else if(fields){
+				debugger
+				res.send(JSON.stringify(fields))
 			}
-			conn.end()
+			//conn.end()
 		}
-	)
+	)*/
 
 	/* 建表 */
 	/*conn.query("use "+db)
@@ -50,14 +54,15 @@ app.get("/save/saveToDo", (req, res) => {
 				res.status = 500
 				console.error(err)
 			}else if(results){
-				res.send(JSON.stringify({data:"success"}))
+				res.send("success")
 			}
-			conn.end()
+			//conn.end()
 		}
 	)*/
 
 	/* 查询 */
-	/*conn.query(
+	conn.query("use "+db)
+	conn.query(
 		"select * from "+tb+" where id="+24,
 		function(err, results, fields){
 			if(err){
@@ -69,16 +74,29 @@ app.get("/save/saveToDo", (req, res) => {
 					obj.name = results[i].name
 					obj.sex = results[i].sex
 					obj.age = results[i].age
-					arrInfo.push(obj)
-					console.log("%s\t%s\t%s", results[i].name, results[i].sex, results[i].age)
-					console.log(arrInfo)
+					//arrInfo.push(obj)
+					arrInfo = [
+						...arrInfo,
+						Object.assign(
+							{},
+							{
+								name: results[i].name,
+								sex: results[i].sex,
+								age: results[i].age
+							}
+						)
+					]
 				}
 				res.send(JSON.stringify(arrInfo))
 			}
-			conn.end()
 		}
-	)*/
+	)
 })
+
+app.get("*", function(req, res){
+	res.send(JSON.stringify(req.url))
+})
+
 
 
 

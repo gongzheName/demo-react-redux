@@ -27,8 +27,6 @@ module.exports = {
 var webpack = require("webpack")
 var optimist = require("optimist")
 var argv = optimist.argv
-console.log("测试")
-console.log(argv)
 var port = argv.port || 8000;
 module.exports = {
 	entry: "./src/app.js",
@@ -51,6 +49,11 @@ module.exports = {
 		}]
 	},
 	devServer:{
+		/*proxy: {
+			"*": {
+				target: "http://localhost:8086"
+			}
+		},*/
 		historyApiFallback: true,
 		hot: true,
 		inline: true,

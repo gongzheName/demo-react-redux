@@ -14,7 +14,7 @@ import toDoApp from "./modules/toDoApp"
 
 const loggerMiddleware = createLogger()
 const createStoreWithMiddleware = applyMiddleware(loggerMiddleware)(createStore)
-
+// console.log(createStore)
 const reducer = combineReducers({
 	toDoApp
 })

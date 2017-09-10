@@ -9,6 +9,7 @@ const store = configureStore()
 
 class App extends React.Component {
 	render(){
+		//console.log(this)
 		return(
 			<Provider store={store}>
 				<ToDoAppContainer />
